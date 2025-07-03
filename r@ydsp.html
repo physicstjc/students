@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2025 YDSP Science Projects</title>
+  <title>Research@YDSP 2025</title>
   <style>
     body {
       background: linear-gradient(135deg, #1a1a2e, #16213e);
@@ -15,12 +15,39 @@
     h1 {
       text-align: center;
       font-size: 2.8rem;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       color: #00f7ff;
       text-shadow: 2px 2px #000;
     }
+    .info {
+      background: rgba(30, 30, 70, 0.85);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 900px;
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+    .cta-button {
+      display: block;
+      width: max-content;
+      margin: 20px auto;
+      padding: 15px 30px;
+      background-color: #4caf50;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .cta-button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
     .project-card {
-      background: rgba(20, 20, 50, 0.85);
+      background: rgba(50, 50, 100, 0.85);
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
       margin: 10px auto;
@@ -32,12 +59,12 @@
       font-size: 1.3rem;
       font-weight: bold;
       padding: 15px;
-      color: #ff4081;
+      color: #ff9800;
       cursor: pointer;
-      background-color: rgba(255, 64, 129, 0.2);
+      background-color: rgba(255, 152, 0, 0.2);
     }
     .project-title:hover {
-      background-color: rgba(255, 64, 129, 0.4);
+      background-color: rgba(255, 152, 0, 0.4);
     }
     .project-content {
       max-height: 0;
@@ -63,7 +90,30 @@
   </style>
 </head>
 <body>
-  <h1>2025 YDSP Science Projects</h1>
+  <h1>Research@YDSP 2025</h1>
+  <div class="info">
+    <p><strong>Hey there, future innovator!</strong> Are you ready to dive into real-world engineering and tech projects? Research@YDSP is your chance to step into a 4-month journey (Sep to Dec) where you’ll work alongside actual engineers and explore exciting fields in Engineering and Infocomm Technology.</p>
+
+    <p>Here’s what’s in store for you:</p>
+
+    <ul>
+      <li>Pick up to <strong>two projects</strong> you’re most excited about and rank them by preference.</li>
+      <li>Write a short piece (100–200 words) on why these projects inspire you—this will help mentors match you to the right challenge.</li>
+      <li>Some projects may even have a virtual interview to get to know you better.</li>
+      <li>Make sure to send in your application by <strong>21 Jul 2025 (Mon)</strong>.</li>
+    </ul>
+
+    <p>Your attachment starts part-time during school term and shifts to full-time for 2–4 weeks in the holidays (don’t worry—it’s flexible and won’t clash with your school work). By the end, you’ll showcase your work in a report, a poster, and maybe even present at <strong>YDSP Congress 2026</strong> in April!</p>
+
+    <h3>What’s the timeline?</h3>
+    <ul>
+      <li><strong>Now – 3rd week of Jul</strong>: Choose and apply for projects</li>
+      <li><strong>4th week of Jul – Mid Aug</strong>: Shortlisting and mentor confirmation</li>
+      <li><strong>Sep – Dec</strong>: Start your attachment and make an impact</li>
+    </ul>
+  </div>
+
+  <a class="cta-button" href="https://secure.dc5.pageuppeople.com/apply/845/aw/applicationForm/initSurvey.asp?lSurveyEventID=125" target="_blank">Apply Now</a>
 
   <div id="project-container"></div>
 
@@ -86,7 +136,8 @@
               const title = row['Project Title'] || 'No Title';
               const scope = row['Project Scope'] || 'No Scope';
               const skills = row['Skills/Knowledge required'] || 'No Skills Listed';
-              const period = row['Internship Period'] || 'No Period';
+              let period = row['Internship Period\n\n- Sep-Dec (part time basis from Sep, followed by full-time attachment in Dec) \n'];
+              period = 'Sep-Dec';
 
               const card = document.createElement('div');
               card.className = 'project-card';
