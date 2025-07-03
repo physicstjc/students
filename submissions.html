@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Data Lookup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input[type="email"] {
+      padding: 8px;
+      width: 300px;
+      max-width: 90%;
+    }
+    button {
+      padding: 8px 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #eee;
+      width: 30%;
+    }
+    #result {
+      margin-top: 20px;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Check Your Homework Submission</h1>
+  <form id="lookupForm">
+    <label for="email">Enter your email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    <button type="submit">Search</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById('lookupForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim().toLowerCase();
+
+      // Validate domain
+      if (!email.endsWith('@students.edu.sg')) {
+        resultDiv.innerHTML = `<p class="error">Only @students.edu.sg emails are allowed.</p>`;
+        return;
+      }
+
+      resultDiv.innerHTML = "🔎 Searching...";
+
+      fetch('https://script.google.com/macros/s/AKfycbyS65XDwey-kWDcrti_Q8YVaXJvjwu2akZg61-Dr_Bclf1BoTAK-sQevkkcSG2ZTd63/exec', {
+        method: 'POST',
+        body: new URLSearchParams({ email: email })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.error) {
+          resultDiv.innerHTML = `<p class="error">${data.error}</p>`;
+        } else {
+          let html = "<table>";
+          for (const key in data) {
+            html += `
+              <tr>
+                <th>${key}</th>
+                <td>${data[key]}</td>
+              </tr>`;
+          }
+          html += "</table>";
+          resultDiv.innerHTML = html;
+        }
+      })
+      .catch(error => {
+        resultDiv.innerHTML = `<p class="error">Error: ${error}</p>`;
+      });
+    });
+  </script>
+    
+<p>To clarify any data error, please email Mr Tan at <a href="mailto:tan_seng_kwang@moe.edu.sg">tan_seng_kwang@moe.edu.sg</a></p>
+</body>
+</html>
