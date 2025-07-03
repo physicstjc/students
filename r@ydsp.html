@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research@YDSP 2025</title>
-  <style>
+    <style>
     body {
       background: linear-gradient(135deg, #1a1a2e, #16213e);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -62,6 +62,19 @@
       color: #ff9800;
       cursor: pointer;
       background-color: rgba(255, 152, 0, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .project-title::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: #ff9800;
+      transition: transform 0.3s ease;
+    }
+    .project-card.active .project-title::after {
+      content: '−';
+      transform: rotate(180deg);
     }
     .project-title:hover {
       background-color: rgba(255, 152, 0, 0.4);
