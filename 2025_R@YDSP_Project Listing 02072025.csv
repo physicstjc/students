@@ -1,0 +1,165 @@
+﻿Project Title,Project Scope,Skills/Knowledge required,"Internship Period
+
+- Sep-Dec (part time basis from Sep, followed by full-time attachment in Dec) 
+"
+Injecting Intelligence into Drones,"In this project, the student will augment the autonomous localisation and navigation of drones in various terrains through neural nets and machine learning techniques. A trained model will be deployed to interpret drone inputs (e.g. computer vision) and communicate with the flight control computer in guiding the drone autonomously in its mission.
+
+Learning Objective: 
+At the end of the internship, the student will be familiar with Robotic Operating System (ROS) using C++/Python language, as well as PX4 autopilot software.
+
+The student will do the internship with DSTA Air Systems Programme Centre.
+
+Deliverables: 
+C++/Python/Java program that can localize drones in unknown environments.","Interest in AI, Robotics, Programming, Software Engineering, Computer Engineering and Computer Science",Sep - Dec 
+Novel/Green Energy Solutions for Tactical Soldier Applications,"Soldiers today are an important forward sensor platform for the Army and are increasingly prolific consumers of electrical energy. Though these C4 devices have become more efficient, Soldiers have to manage a greater number and variety of devices which in turn place a heavy weight burden on our war fighters.
+
+Learning Objectives:
+This project will require the student(s) to research about various novel/green energy solutions, understand how various electro-chemical systems and fuel cells function to recommend an energy-dense and sustainable solution for tactical soldier applications. Through this project, the student(s) will be exposed to a variety of soldier C4 systems and better understand power electro-chemistry.
+
+The student will do the internship with DSTA Land Systems Programme Centre.
+
+Deliverables include a final report of the study, analysis and recommendations put forth. As a stretch target, to build/develop a prototype for tactical soldier applications.","Basic electro-chemistry knowledge, solid works is preferred.",Sep - Dec 
+Drone versus Drone,"Drone versus Drone is an initiative to detect, track and take-down unauthorised drone in restricted areas using COTS drones. The current ways of the detection and engagement are asymmetrical in both cost and operational success. With the increasing capability of COTS drone, it is important to explore new innovative approaches to tackle this asymmetrical threat.
+
+Learning Objectives:
+In this project, the students will develop 1) Computer Vision (CV) models for the detection and tracking of unauthorised drones and 2) drone applications for the autonomous tracking and take-down of unauthorised drones. 
+
+a) The students will explore the automation of an end-to-end CV pipeline which covers data management (annotation, visualization), model training and building, and testing on various end deployment devices. This includes Deep Learning, GAN style transfer techniques, etc. and tools such as the Nvidia Transfer Learning Toolkit.
+
+b) They will also explore the usage of a synthetic data pipeline for the programmatic generation of annotated synthetic dataset to support the deep learning of CV models. The includes the use of Game Engine such as Unity to generate data that is realistic and inclusive of diverse conditions.
+
+c) Lastly the students will develop Ardupilot/PX4 based applications to incorporate autonomous tracking and take-down logics to COTS drones. The application will be tested and validated in field trials or in simulation tools such as Gazebo
+
+The student will do the internship with DSTA C3 Development Programme Centre.
+
+Deliverables:
+Development or enhancement to a prototype, Demonstration and Presentation and a Final Report","Knowledge:
+1) Programming language: Python, Java, C#, C++
+
+2) OS: Ubuntu, Windows
+
+3) Networking basics
+
+4) [Optional] Containerization (Docker), Unity, Gazebo, Arudpilot, PX4
+
+",Sep - Dec 
+Data Analytics on Weather in Singapore and Impact on Sensors performance,"Weather is a factor to consider for system performance and for system testing. Under heavy downpour, Radio Frequency waves will be attenuated and affect the tests results. This project aims to provide the interns with an opportunity to perform data analytics and obtain insightful conclusions from Singapore’s historical weather datasets
+
+Learning Objective:
+The project will require an analysis on the resultant impact of different weather types on different types of sensors performance. (e.g. Radar, ESM, Communications). The interns will utilise open-source weather data (e.g. NEA) to create a model to predict the resultant impact onto various sensors.
+
+The student will do the internship with DSTA Advanced Systems Programme Centre.
+
+Deliverables:
+The interns will be expected to use Power BI to make sense of the weather data and the predictive model will be created using Python.  The intern will provide a report to record their findings and assessment on the resultant impact on different types of sensors performance from different types of weather.",Knowledge in Python and Power BI,Sep - Dec 
+Automated Red Team Operations,"A number of open source tools that could perform automatic emulation of red team operations are available. This project seeks to discover and develop automated red team techniques leveraging on such open sourced tools. 
+
+Learning Objective:
+Through this project, the student will learn the concepts and methodology behind red teaming operations.
+
+The student will do the internship with DSTA Cybersecurity Programme Centre.
+
+Deliverables:
+Conduct a Proof of concept demo and submit a report","C/C++ programming skills, familiarity with assembly will be beneficial.
+Experience with x86 Assembly, Python and reverse engineering will be beneficial.
+
+To be proficient in Python.",Sep - Dec 
+Adaptive Training and Gamification for Simulators ,"Simulators are used to assess trainee performance during their regular training, by the instructors. Given the vast amount of cognitive tasks that instructors are faced with, incorporating the use of data analytics and visualisation to capture and measure real-time trainee performance allows for immediate analysis and remediation. This feedback loop could also be automated to enable scenario/curriculum adaptation to optimise training for the trainees. Gamification elements are also introduced to improve the overall training experience and give the trainees motivation for improvements.
+
+Learning Objective:
+This project aims to enable the instructors to evaluate the trainee’s performance more objectively during training sessions. The student will examine the adaptation of current training scenarios to shorten training time and enable trainees to attain higher levels of competencies. He/she will also recommend suitable gamification techniques that can be deployed in simulators 
+
+Depending on the background of the student, he/she will study and carry out development work in the respective aspects which will expose him/her to cognitive work analysis and the application of visual, auditory, cognitive and psychomotor workload in training system design. The student would also gain exposure to the process of conceptualising, designing, developing, integrating and realising engineering ideas and prototypes. 
+
+The student will do the internship with DSTA Simulation & Training Systems Hub.
+
+Deliverables: 
+Conduct literature reviews on suitable techniques to instructional design; Conduct surveys and gather users' feedback on the training systems, Understand users' experiences and create users' journey maps
+","Interest in human factors and ergonomics and design of systems
+",Sep - Dec 
+App Security,"Web development technologies have evolved swiftly given the ubiquitous nature of web based applications. As these technologies solve developer’s challenges in building web applications, they are also constantly examined for vulnerabilities.  
+
+This project allows the student to explore full stack web application development, learn secure coding practises and demonstrate understanding of OWASP top 10 vulnerabilities to strengthen the security posture in web applications.
+
+Learning Objective:
+Through this project, the student will be exposed to web application development using both client side and server side frameworks and languages. The student will then practise secure coding development on their platform and create a prototype to showcase the concept. The student will also have the opportunity to learn about OWASP top 10 vulnerabilities and demonstrate their understanding through detecting and rectifying them.
+
+The student will do the internship with DSTA Enterprise Digital Service.  
+
+Deliverables:
+Presentation, report and create a prototype to showcase the concept.
+",Science Stream with interest in web development and cybersecurity,Sep - Dec 
+Market Survey of USVs,"In recent years, many Unmanned Surface Vessels (USV) suppliers have entered the market, claiming various levels of autonomy for navigation. 
+
+Learning objectives:
+The goal of the intern is to perform a market survey of USV suppliers globally (at least one company from Asia (China, Korea, Japan), Europe (UK, France, Italy, Israel, Turkey), North Amercia (USA, Canada)) and assess their level of autonomy. At the end of the project, the intern will give a presentation on the status of USV development globally, including who are the leading suppliers.
+
+The student will do the internship with DSTA Naval Systems Programme Centre.
+
+Deliverables:
+Report and presentation on findings.",Nil,Sep - Dec 
+Data Processing and Artificial Intelligence for Enhanced Incident Management,"Land Checkpoints play a pivotal role in national security, serving as the frontline for ensuring border integrity and effective immigration control. Given the high volume of daily travellers and the complexity of activities at these borders, it is imperative to deploy advanced solutions that support the Immigration and Checkpoint Authority (ICA) in their operations. 
+
+As the designated Centre of Excellence for Command, Control and Communication (C3) in the public service, DSTA plays a pivotal role in driving and developing C3 capabilities across the SAF and other public agencies, including ICA. 
+ 
+Given the exponential advancement in Large Language Models (LLMs) such as ChatGPT, has created new opportunities for improving operational efficiency. This project focuses on exploring the application of Natural Language Processing to enhance the operational effectiveness  at Land Checkpoints.   
+ 
+The student will do the internship with DSTA Systems Engineering and C3 Centre. 
+ 
+Deliverables: (1) Identify and evaluate potential AI deployment within ICA operation, focusing on their effectiveness and impact;  (2) Report and presentation on their work.","Knowledge in AI and Data Processing is preferred, but not mandatory",Sep - Dec 
+UX Garage Revamp: Enhancing the Web User Experience and Maintainability of a Product Strategy Resource Hub,"The UX Garage, a website hosting UX Guides, Playbooks, and Templates, is a vital resource for our organization, serving as a central hub for critical UX information and tools that support various product teams and initiatives. Currently, the website is comprised of numerous links and exported PDFs, which has led to several challenges:
+1. Maintenance difficulties: Updating and editing content requires significant time and effort, involving manual editing of working copy files, re-exporting, and re-uploading to the website. The website's current structure and design make it difficult to scale and adapt to new demands and requirements.
+2. User experience: With a growing set of guides and resources, the current website is not optimized for quick navigation, potentially leading to future frustration and decreased productivity as the complexity of the information expands.
+To address these challenges and enhance the overall user experience, the student is expected to reimagine and redesign the website. The goal is to create a modern, intuitive, and accessible website that not only improves user experience but also streamlines maintenance and updates, ensuring that teams can efficiently access the resources they need to succeed.
+
+Learning Objectives:
+• Apply website design principles and best practices to create an intuitive and user-friendly interface
+• Utilize low-code/no-code solutions (e.g., Webflow, Squarespace) to build and deploy a website
+• Understand the importance of maintainability and version control in website development
+• Work with DSTA Product Ops team to gain insights on product strategy, UX quality, and UX productivity
+
+The student will do the internship with DSTA Digital Hub Programme Centre.
+
+Deliverables:
+• A fully redesigned and functional website with improved user experience
+• A clear and documented design process, including wireframes, prototypes, and design decisions
+• A presentation/demo showcasing the final design and its features","Strong portfolio showcasing web design skills
+
+Some design skills in graphic and motion design to enhance visual appeal and engagement is preferred",Sep - Dec 
+PRIZM Evolution:  Expanding and Enhancing DSTA’s Design System ,"PRIZM is DSTA’s design system, created to improve the quality, efficiency and consistency of user interfaces across our diverse range of products. The objective of this project is to expand and enhance PRIZM by adding new components and templates, improving existing ones, and optimising our processes. You will gain hands-on experience with the end-to-end process of integrating new components into a design system and have the opportunity to contribute strategically to PRIZM.
+
+Learning Objectives:
+• UI Research: conduct research to discover user needs and identify user requirements.
+• UI Design: design wireframes and prototypes for components and templates.
+• Developer Collaboration: work with developers to translate designs into functioning code.
+• Documentation: write clear design and implementation guidelines for components and templates. 
+• Strategy: conduct research on design system best practices and propose recommendations to improve our effectiveness, processes and governance.
+
+The student will do the internship with DSTA Digital Hub Programme Centre.
+
+Deliverables:
+• Contribute 1 or more new components and templates to our design system.
+• Improve 1 or more existing components and templates in our design system.
+• Provide strategic recommendations for our design system.
+","- Background or passion in design systems, UI/UX design, front-end development or human-computer interaction (HCI).
+- Experience in the design process and conducting user research
+- Proficiency in design tools such as Figma or Axure RP.
+- Ability to collaborate effectively with developers and cross-functional teams
+",Sep - Dec 
+Improving Software Quality with AI,"With the continued rise in the complexity of software, there is an ever growing need to improve our coding techniques to ensure that software quality is not compromised in DSTA. We look to AI as a potential leverage to help improve the overall quality of software implemented by our developers. 
+
+Learning Objective:
+In this project, students will be actively involved in surveying the effectiveness of existing AI-assisted coding tools in the market for improving software quality. He/She will gain an appreciation of the principles and techniques behind quality software, and be able to identify how AI-assisted coding tools can help improve a developer’s code.
+
+The student will do the internship with DSTA MINDEF Digital Services.
+
+Deliverables:
+1. Recommendations on how to most effectively leverage on AI-assisted coding tools to improve quality.
+2. A simple demonstration to showcase the AI-assisted coding in action.",Some understanding of software coding preferred.,Sep - Dec 
+Optimization of License Distribution,"Large Organisation will have large IT infrastructure and there are many licenses involved in order to operate the IT systems, hence driving up the operating cost. Hence, there are impetus for the organisation to optimise the number of license and reduce the operating cost.
+
+In this project, the student will understand data analytics and data engineering by determine optimized distribution of software licenses based on a set of rules as well as algorithm development and cost-benefit analysis
+
+The student will do the internship with DSTA Infocomm Infrastructure Programme Centre.
+
+Deliverables: Propose distribution of licenses with associated costs.","Optimization, graph theory, mathematics",Sep - Dec 
