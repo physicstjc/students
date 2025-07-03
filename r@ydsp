@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025 YDSP Science Projects</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      color: #00f7ff;
+      text-shadow: 2px 2px #000;
+    }
+    .project-card {
+      background: rgba(20, 20, 50, 0.85);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+      margin: 10px auto;
+      max-width: 900px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding: 15px;
+      color: #ff4081;
+      cursor: pointer;
+      background-color: rgba(255, 64, 129, 0.2);
+    }
+    .project-title:hover {
+      background-color: rgba(255, 64, 129, 0.4);
+    }
+    .project-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out, padding 0.3s ease;
+      padding: 0 15px;
+    }
+    .project-card.active .project-content {
+      max-height: 500px;
+      padding: 15px;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 10px;
+      color: #7df9ff;
+    }
+    .section-content {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <h1>2025 YDSP Science Projects</h1>
+
+  <div id="project-container"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script>
+    const csvUrl = '2025_R@YDSP_Project%20Listing%2002072025.csv'; // Replace with actual URL
+
+    fetch(csvUrl)
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(data => {
+        Papa.parse(data, {
+          header: true,
+          skipEmptyLines: true,
+          complete: function(results) {
+            const container = document.getElementById('project-container');
+            results.data.forEach(row => {
+              const title = row['Project Title'] || 'No Title';
+              const scope = row['Project Scope'] || 'No Scope';
+              const skills = row['Skills/Knowledge required'] || 'No Skills Listed';
+              const period = row['Internship Period'] || 'No Period';
+
+              const card = document.createElement('div');
+              card.className = 'project-card';
+
+              card.innerHTML = `
+                <div class="project-title">${title}</div>
+                <div class="project-content">
+                  <div class="section-title">Project Scope</div>
+                  <div class="section-content">${scope}</div>
+                  <div class="section-title">Skills/Knowledge Required</div>
+                  <div class="section-content">${skills}</div>
+                  <div class="section-title">Internship Period</div>
+                  <div class="section-content">${period}</div>
+                </div>
+              `;
+
+              card.querySelector('.project-title').addEventListener('click', () => {
+                card.classList.toggle('active');
+              });
+
+              container.appendChild(card);
+            });
+          }
+        });
+      })
+      .catch(error => console.error('Error loading CSV:', error));
+  </script>
+</body>
+</html>
