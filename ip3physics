@@ -1,142 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IP3 Physics Assignment Submission Student Lookup</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monthly Programme</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f5f5f5;
-    }
-    h1 {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
       color: #333;
+      margin: 0;
+      padding: 20px;
     }
-    form {
-      margin-bottom: 20px;
+
+    h1 {
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 30px;
     }
-    input[type="email"], input[type="text"] {
-      padding: 8px;
-      width: 300px;
-      max-width: 90%;
-      margin-bottom: 10px;
+
+    .container {
+      max-width: 800px;
+      margin: auto;
     }
-    button {
-      padding: 8px 12px;
-    }
-    .profile-card {
-      background: #e0f7fa;
-      border-radius: 8px;
-      padding: 15px;
-      margin-top: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .profile-card h3 {
-      margin-top: 0;
-      color: #00796b;
-    }
-    .profile-row {
-      margin: 5px 0;
-    }
-    .profile-label {
-      font-weight: bold;
-      color: #004d40;
-    }
-    table.details-table {
+
+    table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
       background: #fff;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
     }
-    table, th, td {
-      border: 1px solid #ccc;
-    }
+
     th, td {
-      padding: 8px;
+      padding: 12px 16px;
       text-align: left;
+      border-bottom: 1px solid #eaeaea;
     }
+
     th {
-      background: #f0f0f0;
-      width: 30%;
+      background-color: #f0f0f0;
+      font-weight: 600;
     }
-    #result {
+
+    #randomNameBox {
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    button {
+      background-color: #222;
+      color: #fff;
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    .name-display {
+      font-size: 24px;
+      font-weight: 600;
       margin-top: 20px;
-    }
-    .error {
-      color: red;
     }
   </style>
 </head>
 <body>
-  <h1>Check Your IP3 Physics Assignment Submission</h1>
-  <form id="lookupForm">
-    <label for="email">Enter your @students.edu.sg email:</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <label for="nric">Enter last 4 characters of NRIC:</label><br>
-    <input type="text" id="nric" name="nric" maxlength="4" required><br><br>
-    <button type="submit">Search</button>
-  </form>
-  <div id="result"></div>
+  <div class="container">
+    <h1>Monthly Programme</h1>
+
+    <!-- Programme Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Event</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025-07-11</td>
+          <td>Project Kickoff</td>
+          <td>2:00 PM</td>
+        </tr>
+        <tr>
+          <td>2025-07-18</td>
+          <td>Prototype Testing</td>
+          <td>3:00 PM</td>
+        </tr>
+        <tr>
+          <td>2025-07-25</td>
+          <td>Presentation Day</td>
+          <td>10:00 AM</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Random Name Generator -->
+    <div id="randomNameBox">
+      <h2>🎲 Random Name Generator</h2>
+      <button onclick="generateRandomName()">Pick a Name</button>
+      <div class="name-display" id="nameDisplay">—</div>
+    </div>
+  </div>
 
   <script>
-    const form = document.getElementById('lookupForm');
-    const resultDiv = document.getElementById('result');
+    let names = [];
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim().toLowerCase();
-      const nric = document.getElementById('nric').value.trim().toUpperCase();
+    // Load names from Google Sheets
+    async function loadNamesFromSheet() {
+      const sheetId = 'YOUR_SHEET_ID';
+      const sheetName = 'Sheet1';
+      const apiKey = 'YOUR_GOOGLE_API_KEY';
+      const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${sheetName}!A1:A100?key=${apiKey}`;
 
-      // Validate domain
-      if (!email.endsWith('@students.edu.sg')) {
-        resultDiv.innerHTML = `<p class="error">Only @students.edu.sg emails are allowed.</p>`;
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        names = data.values.flat().filter(name => name.trim() !== '');
+      } catch (err) {
+        console.error('Failed to fetch names:', err);
+        document.getElementById('nameDisplay').innerText = 'Failed to load names.';
+      }
+    }
+
+    function generateRandomName() {
+      if (names.length === 0) {
+        document.getElementById('nameDisplay').innerText = 'No names available.';
         return;
       }
+      const randomIndex = Math.floor(Math.random() * names.length);
+      document.getElementById('nameDisplay').innerText = names[randomIndex];
+    }
 
-      resultDiv.innerHTML = "🔎 Authenticating...";
-
-      fetch('https://script.google.com/macros/s/AKfycbyS65XDwey-kWDcrti_Q8YVaXJvjwu2akZg61-Dr_Bclf1BoTAK-sQevkkcSG2ZTd63/exec', {
-        method: 'POST',
-        body: new URLSearchParams({ email: email, nric: nric })
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.error) {
-          resultDiv.innerHTML = `<p class="error">${data.error}</p>`;
-        } else {
-          // Separate first 4 rows
-          let keys = Object.keys(data);
-          let profileHTML = `
-            <div class="profile-card">
-              <h3>Profile</h3>`;
-          for (let i = 0; i < 4; i++) {
-            profileHTML += `
-              <div class="profile-row">
-                <span class="profile-label">${keys[i]}:</span> ${data[keys[i]]}
-              </div>`;
-          }
-          profileHTML += `</div>`;
-
-          // Remaining rows in a table
-          let tableHTML = "<table class='details-table'>";
-          for (let i = 4; i < keys.length; i++) {
-            tableHTML += `
-              <tr>
-                <th>${keys[i]}</th>
-                <td>${data[keys[i]]}</td>
-              </tr>`;
-          }
-          tableHTML += "</table>";
-
-          resultDiv.innerHTML = profileHTML + tableHTML;
-        }
-      })
-      .catch(error => {
-        resultDiv.innerHTML = `<p class="error">Error: ${error}</p>`;
-      });
-    });
+    // Load on page load
+    loadNamesFromSheet();
   </script>
 </body>
 </html>
