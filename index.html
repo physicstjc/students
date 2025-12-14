@@ -1,32 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Student Assignment Updates</title>
-<link rel="stylesheet" href="styles.css">
+<title>Student Updates</title>
+<link rel="stylesheet" href="assets/style.css">
 <script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="assets/config.js" defer></script>
+<script src="assets/app.js" defer></script>
 </head>
 <body>
-<header class="header">
-<h1>Student Assignment Updates</h1>
-</header>
-<main class="main">
-<section class="auth">
-<div id="signin"></div>
-<button id="signout" class="hidden">Sign out</button>
-<div id="auth-status" class="status"></div>
-</section>
-<section class="content">
-<div id="profile" class="profile hidden"></div>
-<div id="controls" class="controls hidden">
-<button id="refresh">Refresh</button>
+<div id="app">
+<section id="login-view">
+<div class="card">
+<h1>Sign in</h1>
+<p class="muted">Use your Google account to view your updates.</p>
+<div id="gsi-button"></div>
+<div id="status" class="status"></div>
 </div>
-<div id="details" class="details hidden"></div>
-<div id="table-container" class="table-container hidden"></div>
 </section>
-</main>
-<script src="config.js"></script>
-<script src="app.js"></script>
+<section id="data-view" class="hidden">
+<div class="topbar">
+<div id="welcome"></div>
+<button id="logout">Logout</button>
+</div>
+<div id="table-wrap">
+<table id="data-table"></table>
+</div>
+</section>
+</div>
 </body>
 </html>
